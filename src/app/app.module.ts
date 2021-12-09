@@ -19,7 +19,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ArticleDetailComponent,
     LoginComponent,
     SignupComponent,
-    CommentListComponent
+    CommentListComponent,
     DashboardComponent
   ],
   imports: [
