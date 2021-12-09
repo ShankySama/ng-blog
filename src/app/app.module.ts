@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CommentListComponent } from './comment-list/comment-list.component';
     LoginComponent,
     SignupComponent,
     CommentListComponent
+    DashboardComponent
   ],
   imports: [
     ReactiveFormsModule,
