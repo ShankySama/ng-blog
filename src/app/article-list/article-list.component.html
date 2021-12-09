@@ -1,0 +1,84 @@
+<header class="tm-header" id="tm-header">
+    <div class="tm-header-wrapper">
+        <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="tm-site-header">
+            <div class="mb-3 mx-auto tm-site-logo"><i class="fas fa-times fa-2x"></i></div>            
+            <h1 class="text-center">Blog</h1>
+        </div>
+        <nav class="tm-nav" id="tm-nav">            
+            <ul>
+                <li class="tm-nav-item active"><a routerLink="article" class="tm-nav-link">
+                    <i class="fas fa-home"></i>
+                    Articles
+                </a></li>
+                <li class="tm-nav-item"><a routerLink="login" class="tm-nav-link">
+                    <i class="far fa-comments"></i>
+                    Comments
+                </a></li>
+                <li class="tm-nav-item"><a routerLink="signup" class="tm-nav-link">
+                    <i class="far fa-comments"></i>
+                    Users
+                </a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="container-fluid">
+    <main class="tm-main">
+        <div class="row">
+            <div class="col">
+                <h1>Articles-List</h1>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-secondary addNewArticle-btn">Add new article</button>
+            </div>
+        </div>
+        
+       
+        <table class="table text-center">
+            <thead class="thead-dark">
+              <tr class="text-center">
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Comments</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td class="text-center">
+                    <button class="btn btn-outline-secondary">Update</button>
+                    <button class="btn btn-outline-secondary">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td class="text-center">
+                    <button class="btn btn-outline-secondary">Update</button>
+                    <button class="btn btn-outline-secondary">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td class="text-center">
+                    <button class="btn btn-outline-secondary">Update</button>
+                    <button class="btn btn-outline-secondary">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </main>
+</div>

@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ArticleListComponent } from './article-list/article-list.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ArticleDetailComponent,
     LoginComponent,
     SignupComponent,
+    DashboardComponent,
+    ArticleListComponent,
     CommentListComponent,
     DashboardComponent
   ],
