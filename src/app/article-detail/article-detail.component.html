@@ -89,7 +89,7 @@
                                     <label for="">Name:</label>
                                     <input class="form-control"  formControlName="name" name="name" type="text">
                                     <span class="text-danger"  *ngIf= "validation.name.touched && validation.name.errors?.required ">Name is required</span>
-                                    <!-- <span class="text-danger" *ngIf="validation.name.errors?.required && validation.name.errors?.pattern"> Enter alphabets only</span> -->
+                                    <span class="text-danger" *ngIf="validation.name.errors?.touched && validation.name.errors?.pattern"> Enter alphabets only</span>
                                 </div>
                                 <div class="mb-4">
                                     <label for="">Email:</label>

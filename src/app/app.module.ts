@@ -9,6 +9,7 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { CommentListComponent } from './comment-list/comment-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 
@@ -20,7 +21,9 @@ import { ArticleListComponent } from './article-list/article-list.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-    ArticleListComponent
+    ArticleListComponent,
+    CommentListComponent,
+    DashboardComponent
   ],
   imports: [
     ReactiveFormsModule,
