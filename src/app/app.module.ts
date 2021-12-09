@@ -9,6 +9,7 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { CommentListComponent } from './comment-list/comment-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SignupComponent } from './signup/signup.component';
     ArticleComponent,
     ArticleDetailComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CommentListComponent
   ],
   imports: [
     ReactiveFormsModule,
