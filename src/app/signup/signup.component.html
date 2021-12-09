@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="../../fonts/icomoon/style.css"> -->
+
+    <!-- <link rel="stylesheet" href="../../css/owl.carousel.min.css"> -->
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <!-- <link rel="stylesheet" href="../../css/style.css"> --> -->
+
+    <title>My Blog</title>
+  </head>
+  <body>
+  
+<form [formGroup]="signupform" (ngSubmit)="onSubmit()">
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 order-md-2">
+          <img src="../../assets/images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+                <strong class="text-center">REGISTER HERE</strong>
+           
+            </div>
+              <div>
+                <label>Name:</label>
+              <div class="form-group first">
+               
+                <input  type="text" class="form-control"  formControlName="name" >
+              <span class="text-danger" *ngIf="signupFormValue.name.touched && signupFormValue.name.errors?.required">Name is required</span>
+              <span class="text-danger" *ngIf="signupFormValue.name.touched && signupFormValue.name.errors?.pattern">  Plese Enter Valid Name</span>
+                   
+            </div>
+
+            </div>
+              <div>
+              <label>Email:</label>
+              <div class="form-group first">
+              
+                <input type="text" class="form-control" id="username" formControlName="email" >
+                <span class="text-danger" *ngIf="signupFormValue.email.touched && signupFormValue.email.errors?.required">  Plese Enter Your Email</span>
+                <span class="text-danger" *ngIf="signupFormValue.email.touched && signupFormValue.email.errors?.email">  Plese Enter Your Email</span>
+
+
+              </div>
+
+            </div>
+              <label >Password:</label>
+              <div class="form-group last mb-4">
+              
+                <input type="password" formControlName="password" class="form-control" id="password">
+                <span class="text-danger" *ngIf="signupFormValue.password.invalid && signupFormValue.password.touched">  Plese Enter Password
+                    
+                </span>
+                
+              </div>
+              
+             
+
+              <input type="submit" [disabled]="signupform.invalid" value="SIGN UP" class="btn text-white btn-block btn-primary">
+              <div class="d-flex mb-5 mt-3 align-items-center">
+              
+                <h6>Already Registerd ? <a routerLink="/login">Login here</a> </h6>
+                </div>
+             
+            
+            
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</form>
+  
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/popper.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/main.js"></script>
+  </body>
+</html>

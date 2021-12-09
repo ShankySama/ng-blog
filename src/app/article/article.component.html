@@ -1,0 +1,192 @@
+<header class="tm-header" id="tm-header">
+        <div class="tm-header-wrapper">
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="tm-site-header">
+                <div class="mb-3 mx-auto tm-site-logo"><i class="fas fa-times fa-2x"></i></div>            
+                <h1 class="text-center">Blog</h1>
+            </div>
+            <nav class="tm-nav" id="tm-nav">            
+                <ul>
+                    <li class="tm-nav-item active"><a routerLink="article" class="tm-nav-link">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a></li>
+                    <li class="tm-nav-item"><a routerLink="login" class="tm-nav-link">
+                        <i class="far fa-comments"></i>
+                        Login
+                    </a></li>
+                    <li class="tm-nav-item"><a routerLink="signup" class="tm-nav-link">
+                        <i class="far fa-comments"></i>
+                        Sign up
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <main class="tm-main">
+            <!-- Search form -->
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                          <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn-lg btn-outline-dark" id="dropdownBasic1" ngbDropdownToggle>Blogs</button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                              <button ngbDropdownItem (click)="getCategory('Sports')">Sports</button>
+                              <button ngbDropdownItem (click)="getCategory('Fashion')">Fashion</button>
+                              <button ngbDropdownItem (click)="getCategory('Technology')">Technology</button>
+                              <button ngbDropdownItem (click)="getCategory('Food')">Food</button>
+                              <button ngbDropdownItem (click)="getCategory('Fitness')">Fitness</button>
+                              <button ngbDropdownItem (click)="getCategory('Travel')">Travel</button>
+                              <button ngbDropdownItem (click)="getCategory('Music')">Music</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                            <!-- search button -->
+                            <form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
+                                <div class="input-group">
+                                    <div class="form-outline">
+                                      <input (keypress)="stopUser()" autocomplete="off" formControlName="search" type="search" id="form1" class="form-control" />
+                                    </div>
+                                    <button [disabled]="searchForm.invalid" type="submit" class="ml-1 btn btn-outline-dark">
+                                      Search
+                                    </button>
+                                  </div>
+                            </form>   
+                        </div>
+                      </div>
+                </div>
+            </div>            
+            <div class="row tm-row">
+                <h1 *ngIf="userSearch==true" class="pt-5 pl-2">Blogs Related to {{searchedValue}}</h1>
+                <article class="col-12 col-md-6 tm-post">
+                    <hr class="tm-hr-primary">
+                    <a href="#" class="effect-lily tm-post-link tm-pt-20">
+                        <h2 class=" tm-color-primary tm-post-title">Simple and useful HTML layout</h2>
+                    </a>                    
+                    <p class="tm-pt-30">
+                        There is a clickable image with beautiful hover effect and active title link for each post item. 
+                        Left side is a sticky menu bar. Right side is a blog content that will scroll up and down.
+                    </p>
+                    <div class="d-flex justify-content-between tm-pt-45">
+                        <span class="tm-color-primary">Travel . Events</span>
+                        <span class="tm-color-primary">June 24, 2020</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <span>36 comments</span>
+                        <span>by Admin Nat</span>
+                    </div>
+                </article>
+                <article class="col-12 col-md-6 tm-post">
+                    <hr class="tm-hr-primary">
+                    <a href="#" class="effect-lily tm-post-link tm-pt-20">
+                        <h2 class=" tm-color-primary tm-post-title">Multi-purpose blog template</h2>
+                    </a>                    
+                    <p class="tm-pt-30">
+                        <a rel="nofollow" href="https://templatemo.com/tm-553-xtra-blog" target="_blank">Xtra Blog</a>  is a multi-purpose HTML CSS template from TemplateMo website. 
+                        Blog list, single post, about, contact pages are included. Left sidebar fixed width and content area is a fluid full-width.
+                    </p>
+                    <div class="d-flex justify-content-between tm-pt-45">
+                        <span class="tm-color-primary">Creative . Design . Business</span>
+                        <span class="tm-color-primary">June 16, 2020</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <span>48 comments</span>
+                        <span>by Admin Sam</span>
+                    </div>
+                </article>
+                <article class="col-12 col-md-6 tm-post">
+                    <hr class="tm-hr-primary">
+                    <a href="post.html" class="effect-lily tm-post-link tm-pt-20">
+                        <h2 class=" tm-color-primary tm-post-title">How can you apply Xtra Blog</h2>
+                    </a>                    
+                    <p class="tm-pt-30">
+                        You are <u>allowed</u> to convert this template as any kind of CMS theme or template for your custom website builder. 
+                        You can also use this for your clients. Thank you for choosing us.
+                    </p>
+                    <div class="d-flex justify-content-between tm-pt-45">
+                        <span class="tm-color-primary">Music . Audio</span>
+                        <span class="tm-color-primary">June 11, 2020</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <span>24 comments</span>
+                        <span>by John Walker</span>
+                    </div>
+                </article>
+                <article class="col-12 col-md-6 tm-post">
+                    <hr class="tm-hr-primary">
+                    <a href="post.html" class="effect-lily tm-post-link tm-pt-20">
+                        <h2 class="tm-color-primary tm-post-title">A little restriction to apply</h2>
+                    </a>                    
+                    <p class="tm-pt-30">
+                        You are <u>not allowed</u> to re-distribute this template as a downloadable ZIP file on any template collection
+                        website. This is strongly prohibited as we worked hard for this template. Please contact TemplateMo for more information.
+                    </p>
+                    <div class="d-flex justify-content-between tm-pt-45">
+                        <span class="tm-color-primary">Artworks . Design</span>
+                        <span class="tm-color-primary">June 4, 2020</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <span>72 comments</span>
+                        <span>by Admin Sam</span>
+                    </div>
+                </article>
+                <article class="col-12 col-md-6 tm-post">
+                    <hr class="tm-hr-primary">
+                    <a href="#" class="effect-lily tm-post-link tm-pt-20">
+                        <h2 class=" tm-color-primary tm-post-title">Color hexa values of Xtra Blog</h2>
+                    </a>                    
+                    <p class="tm-pt-30">
+                        If you wish to kindly support us, please contact us or contribute a small PayPal amount to info [at] templatemo.com that is helpful for us.
+                        <br>
+                        Title #099 New #0CC <br>
+                        <span class="tm-color-primary">Text #999 Line #CCC Next #0CC Prev #F0F0F0</span>
+                    </p>
+                    <div class="d-flex justify-content-between tm-pt-45">
+                        <span class="tm-color-primary">Creative . Video . Audio</span>
+                        <span class="tm-color-primary">May 31, 2020</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <span>84 comments</span>
+                        <span>by Admin Sam</span>
+                    </div>
+                </article>
+                <article class="col-12 col-md-6 tm-post">
+                    <hr class="tm-hr-primary">
+                    <a href="post.html" class="effect-lily tm-post-link tm-pt-20">
+                        <h2 class=" tm-color-primary tm-post-title">Donec convallis varius risus</h2>
+                    </a>                    
+                    <p class="tm-pt-30">
+                        Quisque id ipsum vel sem maximus vulputate sed quis velit. Nunc vel turpis eget orci elementum cursus vitae in eros. Quisque vulputate nulla ut dolor consectetur luctus.
+                    </p>
+                    <div class="d-flex justify-content-between tm-pt-45">
+                        <span class="tm-color-primary">Visual . Artworks</span>
+                        <span class="tm-color-primary">June 16, 2020</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <span>96 comments</span>
+                        <span>by Admin Sam</span>
+                    </div>
+                </article>
+            </div>
+            <div>
+                <!-- pagination -->
+                <ngb-pagination
+                    (page)="1"
+                    [collectionSize]="70">
+                    <ng-template ngbPaginationPrevious>Prev</ng-template>
+                    <ng-template ngbPaginationNext>Next</ng-template>
+                </ngb-pagination>
+            </div>
+        </main>
+    </div>
