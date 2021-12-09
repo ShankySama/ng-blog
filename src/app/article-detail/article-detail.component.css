@@ -8,6 +8,14 @@ body {
     line-height: 2em;
     overflow-x: hidden;
 }
+.comment{
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 19px;
+    line-height: 1em;
+    overflow-x: hidden;
+}
 
 p, span { color: #999; }
 hr { 
@@ -31,7 +39,24 @@ hr {
     width: 400px;
     overflow-y: visible;     
 }
-
+.detail-section{
+    background-color: #f5f5f5;
+}
+.details{
+    color:  #999;
+    font-size: medium;
+}
+.heading{
+    font-size: large;
+    color: black;
+}
+.user{
+        height: 101px;
+        width: 86px;
+        margin: 0 auto;
+        margin-top: 16px;
+        border-radius: 50%;
+}
 .tm-header-wrapper {
     overflow-y: scroll;
     scrollbar-width: none;
@@ -67,7 +92,13 @@ hr {
     margin-left: 400px;
     padding: 80px 100px 25px;
 }
-
+.searchIcon{
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    width: 24px;
+}
 .tm-post { max-width: 470px; }
 
 .tm-row {
@@ -254,8 +285,20 @@ ul {
     border: none;
 }
 
-.tm-btn-small { padding: 8px 33px; }
-
+.tm-btn-small { padding: 8px 33px;
+background-color: #0CC;
+cursor: pointer;
+}
+.disable{
+background-color: lightgrey;
+padding: 8px 33px;
+cursor: pointer;
+}
+.logo{
+    width: 69px;
+    height: 75px;
+    border-radius: 52px;
+}
 .tm-btn-primary:hover {
     background-color: #09b6b6;
     color: white;
@@ -327,6 +370,11 @@ video {
     margin-top: 10px;
     margin-right: 30px;
 }
+.tm-comment-figure1{
+    margin-top: 10px;
+    margin-right: 30px;
+    margin-left: -32px !important;
+}
 
 .tm-comment-reply { padding-left: 37px; }
 
@@ -336,7 +384,8 @@ video {
     border-radius: 0;
 }
 
-.tm-comment-form { max-width: 360px; }
+.tm-comment-form {     max-width: 373px;
+    margin-left: 115px; }
 .tm-category-list { list-style-type: none; }
 figure { margin: 0; }
 figcaption { line-height: 1.4; }

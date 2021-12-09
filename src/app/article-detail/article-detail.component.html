@@ -3,15 +3,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Xtra Blog</title>
-	<!-- https://fontawesome.com/ -->
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
-<!--
-    
-TemplateMo 553 Xtra Blog
-
-https://templatemo.com/tm-553-xtra-blog
-
--->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
 	<header class="tm-header" id="tm-header">
@@ -20,81 +12,51 @@ https://templatemo.com/tm-553-xtra-blog
                 <i class="fas fa-bars"></i>
             </button>
             <div class="tm-site-header">
-                <div class="mb-3 mx-auto tm-site-logo"><i class="fas fa-times fa-2x"></i></div>            
-                <h1 class="text-center">Xtra Blog</h1>
+                <div class="mb-3 mx-auto tm-site-logo">
+                    <img src="../../assets/images/logo.jpg" class="logo" alt="">
+                </div>            
+                <h1 class="text-center">Happy Blogging</h1>
             </div>
             <nav class="tm-nav" id="tm-nav">            
                 <ul>
-                    <li class="tm-nav-item"><a href="index.html" class="tm-nav-link">
+                    <li class="tm-nav-item"><a routerLink="" class="tm-nav-link">
                         <i class="fas fa-home"></i>
-                        Blog Home
+                        Home
                     </a></li>
-                    <li class="tm-nav-item"><a href="about.html" class="tm-nav-link">
+                    <li class="tm-nav-item"><a routerLink="login" class="tm-nav-link">
                         <i class="fas fa-users"></i>
-                        About Xtra
+                        Login
                     </a></li>
-                    <li class="tm-nav-item"><a href="contact.html" class="tm-nav-link">
+                    <li class="tm-nav-item"><a routerLink="signup" class="tm-nav-link">
                         <i class="far fa-comments"></i>
-                        Contact Us
+                        Sign-Up
                     </a></li>
                 </ul>
             </nav>
-            <div class="tm-mb-65">
-                <a href="https://facebook.com" class="tm-social-link">
-                    <i class="fab fa-facebook tm-social-icon"></i>
-                </a>
-                <a href="https://twitter.com" class="tm-social-link">
-                    <i class="fab fa-twitter tm-social-icon"></i>
-                </a>
-                <a href="https://instagram.com" class="tm-social-link">
-                    <i class="fab fa-instagram tm-social-icon"></i>
-                </a>
-                <a href="https://linkedin.com" class="tm-social-link">
-                    <i class="fab fa-linkedin tm-social-icon"></i>
-                </a>
-            </div>
-            <p class="tm-mb-80 pr-5 text-white">
-                Xtra Blog is a multi-purpose HTML template from TemplateMo website. Left side is a sticky menu bar. Right side content will scroll up and down.
-            </p>
         </div>
     </header>
     <div class="container-fluid">
         <main class="tm-main">
-            <!-- Search form -->
             <div class="row tm-row">
-                <div class="col-12">
-                    <form method="GET" class="form-inline tm-mb-80 tm-search-form">                
-                        <input class="form-control tm-search-input" name="query" type="text" placeholder="Search..." aria-label="Search">
-                        <button class="tm-search-button" type="submit">
-                            <i class="fas fa-search tm-search-icon" aria-hidden="true"></i>
-                        </button>                                
-                    </form>
-                </div>                
-            </div>            
-            <div class="row tm-row">
-                <div class="col-12">
-                    <hr class="tm-hr-primary tm-mb-55">
-                    <!-- Video player 1422x800 -->
-                    <video width="954" height="535" controls class="tm-mb-40">
-                        <source src="video/wheat-field.mp4" type="video/mp4">							  
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-            <div class="row tm-row">
-                <div class="col-lg-8 tm-post-col">
+                <div class="col-lg-12 tm-post-col">
                     <div class="tm-post-full">                    
                         <div class="mb-4">
                             <h2 class="pt-2 tm-color-primary tm-post-title">Single Post of Xtra Blog HTML Template</h2>
                             <p class="tm-mb-40">June 16, 2020 posted by Admin Nat</p>
+                            <div class="row tm-row">
+                                <div class="col-12">
+                                    <hr class="tm-hr-primary tm-mb-55">
+                                    <!-- <img src="../../assets/images/Blog.PNG" width="680" height="450" controls class="tm-mb-40"> -->
+                                </div>
+                            </div>
                             <p>
                                 This is a description of the video post. You can also have an image instead of
                                 the video. You can free download 
-                                <a rel="nofollow" href="https://templatemo.com/tm-553-xtra-blog" target="_blank">Xtra Blog Template</a> 
+                                <!-- <a rel="nofollow" href="https://templatemo.com/tm-553-xtra-blog" target="_blank">Xtra Blog Template</a>  -->
                                 from TemplateMo website. Phasellus maximus quis est sit amet maximus. Vestibulum vel rutrum
                                 lorem, ac sodales augue. Aliquam erat volutpat. Duis lectus orci, blandit in arcu
                                 est, elementum tincidunt lectus. Praesent vel justo tempor, varius lacus a,
-                        pharetra lacus. </p>
+                                pharetra lacus. </p>
                             <p>
                                 Duis pretium efficitur nunc. Mauris vehicula nibh nisi. Curabitur gravida neque
                                 dignissim, aliquet nulla sed, condimentum nulla. Pellentesque id venenatis
@@ -102,16 +64,67 @@ https://templatemo.com/tm-553-xtra-blog
                                 aliquam ex vel lectus ornare tristique. Nunc et eros quis enim feugiat tincidunt
                                 et vitae dui.
                             </p>
+
+                            <!-- Person Details -->
+                            <div class="col-lg-12 tm-post-col">
+                                <div class=" row detail-section">
+                                    <div class="col-lg-2">
+                                        <img class="user" src="../../assets/images/user.jpg" alt="">
+                                    </div>
+                                    <p class="col-lg-10 details">
+                                        <span class="heading">About Alexander Fleming</span><br>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae recusandae deserunt veniam beatae 
+                                        mollitia quas assumenda maxime autem? Non quidem veritatis repudiandae voluptatibus,
+                                        quisquam totam unde obcaecati ipsam quis optio.</p>
+                                </div>
+                            </div>
                             <span class="d-block text-right tm-color-primary">Creative . Design . Business</span>
                         </div>
                         
                         <!-- Comments -->
-                        <div>
+                        <div class="comment">
+                            <form [formGroup]="commentForm" action="" class="mb-5 tm-comment-form" (ngSubmit)="open(content)">
+                                <h2 class="tm-color-primary tm-post-title mb-4">Your comment</h2>
+                                <div class="mb-4">
+                                    <label for="">Name:</label>
+                                    <input class="form-control"  formControlName="name" name="name" type="text">
+                                    <span class="text-danger"  *ngIf= "validation.name.touched && validation.name.errors?.required ">Name is required</span>
+                                    <!-- <span class="text-danger" *ngIf="validation.name.errors?.required && validation.name.errors?.pattern"> Enter alphabets only</span> -->
+                                </div>
+                                <div class="mb-4">
+                                    <label for="">Email:</label>
+                                    <input class="form-control"  formControlName="email" name="email" type="text">
+                                    <span class="text-danger"  *ngIf= "validation.email.touched && validation.email.errors?.required ">Email is required</span>
+                                <span class="text-danger" *ngIf="validation.email.errors?.email || commentForm.controls.email.errors?.pattern">Enter the valid email address</span><br> 
+                                </div>
+                                <div class="mb-4">
+                                    <label for="">Message:</label>
+                                    <textarea class="form-control"  formControlName="message" name="message" rows="6"></textarea>
+                                    <span class="text-danger" *ngIf= "validation.message.touched && validation.message.errors?.required">Message is required</span>
+                                    <span class="text-danger" *ngIf="validation.message.touched && validation.message.errors?.pattern"> Enter alphabets only</span>
+                                    <span class="text-danger" *ngIf="validation.message.touched && commentForm.controls.message.errors?.maxlength"> Only 200 characters are allowed </span> <br />
+                                </div>
+
+                                <!-- Modal  -->
+                                <ng-template #content let-c="close" let-d="dismiss">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                        <p>Your comment has been added successfully</p>
+                                        </div>
+                                    </ng-template>
+                                <div class="text-right">
+                                    <button class="tm-btn tm-btn-primary tm-btn-small"  [class]="commentForm.invalid ? 'disable' : 'tm-btn-small' "[disabled]="commentForm.invalid" type="submit">Submit</button>                        
+                                </div>                                
+                            </form> 
                             <h2 class="tm-color-primary tm-post-title">Comments</h2>
                             <hr class="tm-hr-primary tm-mb-45">
                             <div class="tm-comment tm-mb-45">
                                 <figure class="tm-comment-figure">
-                                    <img src="img/comment-1.jpg" alt="Image" class="mb-2 rounded-circle img-thumbnail">
+                                    <!-- <img src="img/comment-1.jpg" alt="Image" class="mb-2 rounded-circle img-thumbnail"> -->
                                     <figcaption class="tm-color-primary text-center">Mark Sonny</figcaption>
                                 </figure>
                                 <div>
@@ -130,8 +143,8 @@ https://templatemo.com/tm-553-xtra-blog
                             <div class="tm-comment-reply tm-mb-45">
                                 <hr>
                                 <div class="tm-comment">
-                                    <figure class="tm-comment-figure">
-                                        <img src="img/comment-2.jpg" alt="Image" class="mb-2 rounded-circle img-thumbnail">
+                                    <figure class="tm-comment-figure1">
+                                        <!-- <img src="img/comment-2.jpg" alt="Image" class="mb-2 rounded-circle img-thumbnail"> -->
                                         <figcaption class="tm-color-primary text-center">Jewel Soft</figcaption>    
                                     </figure>
                                     <p>
@@ -141,33 +154,14 @@ https://templatemo.com/tm-553-xtra-blog
                                     </p>
                                 </div>                                
                                 <span class="d-block text-right tm-color-primary">June 21, 2020</span>
-                            </div>
-                            <form action="" class="mb-5 tm-comment-form">
-                                <h2 class="tm-color-primary tm-post-title mb-4">Your comment</h2>
-                                <div class="mb-4">
-                                    <input class="form-control" name="name" type="text">
-                                </div>
-                                <div class="mb-4">
-                                    <input class="form-control" name="email" type="text">
-                                </div>
-                                <div class="mb-4">
-                                    <textarea class="form-control" name="message" rows="6"></textarea>
-                                </div>
-                                <div class="text-right">
-                                    <button class="tm-btn tm-btn-primary tm-btn-small">Submit</button>                        
-                                </div>                                
-                            </form>                          
+                            </div>  
                         </div>
                     </div>
                 </div>
-               
             </div>
             <footer class="row tm-row">
-                <div class="col-md-6 col-12 tm-color-gray">
-                    Design: <a rel="nofollow" target="_parent" href="https://templatemo.com" class="tm-external-link">TemplateMo</a>
-                </div>
-                <div class="col-md-6 col-12 tm-color-gray tm-copyright">
-                    Copyright 2020 Xtra Blog Company Co. Ltd.
+                <div class="col-md-9 col-12 tm-color-gray tm-copyright">
+                    Copyright 2021 Orion Esolutions Pvt. Ltd.
                 </div>
             </footer>
         </main>
