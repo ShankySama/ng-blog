@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { UsersComponent } from './users/users.component';
 import { UpdateusersComponent } from './updateusers/updateusers.component';
+import { AdduserComponent } from './adduser/adduser.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UpdateusersComponent } from './updateusers/updateusers.component';
     LoginComponent,
     SignupComponent,
     UsersComponent,
-    UpdateusersComponent
+    UpdateusersComponent,
+    AdduserComponent
   ],
   imports: [
     ReactiveFormsModule,

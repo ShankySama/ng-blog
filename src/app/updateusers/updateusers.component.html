@@ -1,15 +1,52 @@
+
+<div class="row">
+  <div class="col-3">
+
+    <header class="tm-header" id="tm-header">
+        <div class="tm-header-wrapper">
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="tm-site-header">
+                <div class="mb-3 mx-auto tm-site-logo"><i class="fas fa-times fa-2x"></i></div>            
+                <h1 class="text-center">Blog</h1>
+            </div>
+            <nav class="tm-nav" id="tm-nav">            
+                <ul>
+                    <li class="tm-nav-item active"><a routerLink="/article" class="tm-nav-link">
+                        <i class="fas fa-home"></i>
+                        Articles
+                    </a></li>
+                    <li class="tm-nav-item"><a routerLink="/login" class="tm-nav-link">
+                        <i class="far fa-comments"></i>
+                        Comments
+                    </a></li>
+                    <li  class="tm-nav-item"><a routerLink="/users" class="tm-nav-link">
+                        <i class="far fa-comments"></i>
+                        Users
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+</div>
+
+
+
+<div class="col-9">
 <form [formGroup]="updateform" (ngSubmit)="onSubmit()">
     <div class="content">
       <div class="container">
         <div class="row">
           <div class="col-md-6 order-md-2">
-            <img src="../../assets/images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
+            <img src="../../assets/images/Secure login-rafiki (1).svg" alt="Image" class="img-fluid">
           </div>
           <div class="col-md-6 contents">
             <div class="row justify-content-center">
               <div class="col-md-8">
                 <div class="mb-4">
-                  <strong class="text-center">UPDATE USERS</strong>
+                  <h3><strong class="text-center">UPDATE DETAILS</strong></h3>
              
               </div>
                 <div>
@@ -17,8 +54,8 @@
                 <div class="form-group first">
                  
                   <input  type="text" class="form-control"  formControlName="name" >
-                <span class="text-danger" *ngIf="updateFormValue.name.touched && signupFormValue.name.errors?.required">Name is required</span>
-                <span class="text-danger" *ngIf="updateFormValue.name.touched && signupFormValue.name.errors?.pattern">  Plese Enter Valid Name</span>
+                <span class="text-danger" *ngIf="updateFormValue.name.touched && updateFormValue.name.errors?.required">Name is required</span>
+                <span class="text-danger" *ngIf="updateFormValue.name.touched && updateFormValue.name.errors?.pattern">  Please Enter Valid Name</span>
                      
               </div>
   
@@ -28,8 +65,8 @@
                 <div class="form-group first">
                 
                   <input type="text" class="form-control" id="username" formControlName="email" >
-                  <span class="text-danger" *ngIf="updateFormValue.email.touched && signupFormValue.email.errors?.required">  Plese Enter Your Email</span>
-                  <span class="text-danger" *ngIf="updateFormValue.email.touched && signupFormValue.email.errors?.email">  Plese Enter Your Email</span>
+                  <span class="text-danger" *ngIf="updateFormValue.email.touched && updateFormValue.email.errors?.required">  Please Enter Your Email</span>
+                  <span class="text-danger" *ngIf="updateFormValue.email.touched && updateFormValue.email.errors?.email">  Please Enter Valid Email</span>
   
   
                 </div>
@@ -39,7 +76,7 @@
                 <div class="form-group last mb-4">
                 
                   <input type="password" formControlName="password" class="form-control" id="password">
-                  <span class="text-danger" *ngIf="updateFormValue.password.invalid && signupFormValue.password.touched">  Plese Enter Password
+                  <span class="text-danger" *ngIf="updateFormValue.password.invalid && updateFormValue.password.touched">  Please Enter Password
                       
                   </span>
                   
@@ -47,10 +84,10 @@
                 
                
   
-                <input type="submit" [disabled]="updateform.invalid" value="SIGN UP" class="btn text-white btn-block btn-primary">
+                <input type="submit" [disabled]="updateform.invalid" value="UPDATE" class="btn text-white btn-block btn-primary">
                 <div class="d-flex mb-5 mt-3 align-items-center">
                 
-                  <h6>Already Registerd ? <a routerLink="/login">Login here</a> </h6>
+                  <h6> Back to Manage Users <a routerLink="/users">Manage Users</a> </h6>
                   </div>
                
               
@@ -64,3 +101,5 @@
       </div>
     </div>
   </form>
+</div>
+</div>

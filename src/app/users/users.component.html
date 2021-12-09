@@ -14,15 +14,15 @@
             </div>
             <nav class="tm-nav" id="tm-nav">            
                 <ul>
-                    <li class="tm-nav-item active"><a routerLink="article" class="tm-nav-link">
+                    <li class="tm-nav-item active"><a routerLink="/article" class="tm-nav-link">
                         <i class="fas fa-home"></i>
                         Articles
                     </a></li>
-                    <li class="tm-nav-item"><a routerLink="login" class="tm-nav-link">
+                    <li class="tm-nav-item"><a routerLink="/login" class="tm-nav-link">
                         <i class="far fa-comments"></i>
                         Comments
                     </a></li>
-                    <li class="tm-nav-item"><a routerLink="signup" class="tm-nav-link">
+                    <li  class="tm-nav-item"><a routerLink="/users" class="tm-nav-link">
                         <i class="far fa-comments"></i>
                         Users
                     </a></li>
@@ -34,9 +34,12 @@
 </div>
 
 <div class="col-9">
+    
+<div class="container" >
     <h1 class="text-center mt-3">Manage Users</h1>
-<div class="container mt-5 " >
-<table class="table">
+    <input type="button" routerLink='/adduser' value="ADD USER" class="btn btn-success">
+
+<table class="table mt-5">
     <thead class="thead-dark">
       <tr>
           <th scope="row">Sn.</th>
@@ -52,7 +55,7 @@
         <th>1</th>
         <td>Mark</td>
         <td>Otto</td>
-        <td><button type="button" class="btn btn-warning">UPDATE</button></td>
+        <td><button type="button" routerLink="/update" class="btn btn-warning">UPDATE</button></td>
         <td><button type="button" class="btn btn-danger">DELETE</button></td>
        
       </tr>
