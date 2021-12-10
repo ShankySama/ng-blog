@@ -11,6 +11,9 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { UsersComponent } from './users/users.component';
 import { UpdateusersComponent } from './updateusers/updateusers.component';
+import { CommentListComponent } from './comment-list/comment-list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ArticleListComponent } from './article-list/article-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,11 @@ import { UpdateusersComponent } from './updateusers/updateusers.component';
     LoginComponent,
     SignupComponent,
     UsersComponent,
-    UpdateusersComponent
+    UpdateusersComponent,
+    DashboardComponent,
+    ArticleListComponent,
+    CommentListComponent,
+    DashboardComponent
   ],
   imports: [
     ReactiveFormsModule,
