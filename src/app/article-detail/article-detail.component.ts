@@ -11,7 +11,7 @@ export class ArticleDetailComponent implements OnInit {
 
   constructor(config: NgbModalConfig, private modalService: NgbModal) {
     this.commentForm=new FormGroup({
-      name:new FormControl("",[Validators.required,Validators.maxLength(20)]),
+      name : new FormControl('',[Validators.required,Validators.pattern("^[a-zA-Z\s ]+$")]),
       email:new FormControl("", [Validators.email,Validators.required, Validators.pattern('^[a-z0-9A-Z._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
       message:new FormControl("",[Validators.required,Validators.maxLength(200),Validators.pattern("^[a-zA-Z_,.() ]*$")]),
     })
