@@ -7,6 +7,7 @@ import { CommentListComponent } from './comment-list/comment-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {path:'',component:ArticleComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'article-detail',component:ArticleDetailComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
+  {path:'users',component:UsersComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'article-list',component:ArticleListComponent},
   {path:'comment-list',component:CommentListComponent},
