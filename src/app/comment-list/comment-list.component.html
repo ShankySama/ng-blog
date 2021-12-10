@@ -1,55 +1,59 @@
 <div class="container-fluid">
-    <main class="tm-main">
-        <div class="row">
-            <div class="col">
-                <h1>Comment-List</h1>
-            </div>
-            <div class="col">
-                <button routerLink="/add-update-comments" class="btn btn-outline-secondary addNewArticle-btn">Add new comment</button>
-            </div>
-        </div>
-        <table class="table text-center">
-            <thead class="thead-dark">
-              <tr class="text-center">
-                <th scope="col">#</th>
-                <th scope="col">Date</th>
-                <th scope="col">Article Title</th>
-                <th scope="col">Commented By</th>
-                <th scope="col">Comment</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td class="text-center">
-                    <button routerLink="/add-update-comments"  class="btn btn-outline-secondary update">Update</button>
-                    <button routerLink="/add-update-comments"  class="btn btn-outline-secondary">Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td class="text-center">
-                    <button routerLink="/add-update-comments"  class="btn btn-outline-secondary update">Update</button>
-                    <button routerLink="/add-update-comments"  class="btn btn-outline-secondary">Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                <td class="text-center">
-                    <button routerLink="/add-update-comments"  class="btn btn-outline-secondary update">Update</button>
-                    <button routerLink="/add-update-comments"  class="btn btn-outline-secondary">Delete</button>
-                </td>
-              </tr>
-            </tbody>
-        </table>
-    </main>
+  <main class="tm-main">
+      <div class="row">
+          <div class="col-8">
+            <h1>Comment-List</h1>
+          </div>
+          <div class="col-4">
+            <button routerLink="/add-update-comments" class="btn btn-outline-secondary addNewcomment-btn">Add new comment</button>
+          </div>
+      </div>
+  </main>
+  <div class="container">
+    <table class="table text-center">
+        <thead class="thead-dark">
+          <tr class="text-center">
+            <th scope="col">#</th>
+            <th scope="col">Date</th>
+            <th scope="col">Article Title</th>
+            <th scope="col">Commented By</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>1/12/2021</td>
+            <td>Fashion-world</td>
+            <td>Amrit Kaur</td>
+            <td class="text-center">
+                <button routerLink="/add-update-comments"  class="btn btn-warning update">Update</button>
+                <button   class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>4/12/2021</td>
+            <td>Organic Life</td>
+            <td>Bill Gates</td>
+            <td class="text-center">
+                <button routerLink="/add-update-comments"  class="btn btn-warning update">Update</button>
+                <button  class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>6/12/2021</td>
+            <td>Politics Today</td>
+            <td>Narendra Modi</td>
+            <td class="text-center">
+                <button routerLink="/add-update-comments"  class="btn btn-warning update">Update</button>
+                <button   class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
 </div>
+
+
