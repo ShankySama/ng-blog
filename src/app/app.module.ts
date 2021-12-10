@@ -9,8 +9,14 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { UsersComponent } from './users/users.component';
+import { UpdateusersComponent } from './updateusers/updateusers.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ArticleListComponent } from './article-list/article-list.component';
+import { ArticleAddUpdateComponent } from './article-add-update/article-add-update.component';
+import { AdduserComponent } from './adduser/adduser.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 import { AddUpdateCommentComponent } from './add-update-comment/add-update-comment.component';
 
 @NgModule({
@@ -22,8 +28,17 @@ import { AddUpdateCommentComponent } from './add-update-comment/add-update-comme
     SignupComponent,
     CommentListComponent,
     DashboardComponent,
+    AddUpdateCommentComponent,
+    UsersComponent,
+    UpdateusersComponent,
+    DashboardComponent,
+    ArticleListComponent,
+    ArticleAddUpdateComponent,
+    CommentListComponent,
+    DashboardComponent,
+    AdduserComponent,
+    SidenavComponent,
     AddUpdateCommentComponent
-
   ],
   imports: [
     ReactiveFormsModule,
