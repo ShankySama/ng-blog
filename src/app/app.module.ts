@@ -11,14 +11,13 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { UsersComponent } from './users/users.component';
 import { UpdateusersComponent } from './updateusers/updateusers.component';
-<<<<<<< HEAD
-import { AdduserComponent } from './adduser/adduser.component';
-=======
 import { CommentListComponent } from './comment-list/comment-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleAddUpdateComponent } from './article-add-update/article-add-update.component';
->>>>>>> 6437bb6e5c2ab4f519fe08bfbc37e543a20a4c5d
+import { AdduserComponent } from './adduser/adduser.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { AddUpdateCommentComponent } from './add-update-comment/add-update-comment.component';
 
 @NgModule({
   declarations: [
@@ -29,15 +28,14 @@ import { ArticleAddUpdateComponent } from './article-add-update/article-add-upda
     SignupComponent,
     UsersComponent,
     UpdateusersComponent,
-<<<<<<< HEAD
-    AdduserComponent
-=======
     DashboardComponent,
     ArticleListComponent,
     ArticleAddUpdateComponent,
     CommentListComponent,
-    DashboardComponent
->>>>>>> 6437bb6e5c2ab4f519fe08bfbc37e543a20a4c5d
+    DashboardComponent,
+    AdduserComponent,
+    SidenavComponent,
+    AddUpdateCommentComponent
   ],
   imports: [
     ReactiveFormsModule,

@@ -9,7 +9,6 @@ import { FormControl,FormGroup, Validators } from '@angular/forms';
 export class AdduserComponent implements OnInit {
 
   constructor() { }
-
   addForm = new FormGroup({
     name : new FormControl('',[Validators.required,Validators.pattern("^[a-zA-Z\s ]+$")]),
     email: new FormControl('',[Validators.required]),
