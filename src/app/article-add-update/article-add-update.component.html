@@ -1,0 +1,62 @@
+<header class="tm-header" id="tm-header">
+    <div class="tm-header-wrapper">
+        <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="tm-site-header">
+            <div class="mb-3 mx-auto tm-site-logo"><i class="fas fa-times fa-2x"></i></div>            
+            <h1 class="text-center">Blog</h1>
+        </div>
+        <nav class="tm-nav" id="tm-nav">            
+            <ul>
+                <li class="tm-nav-item active"><a routerLink="" class="tm-nav-link">
+                    <i class="fas fa-home"></i>
+                    Articles
+                </a></li>
+                <li class="tm-nav-item"><a routerLink="" class="tm-nav-link">
+                    <i class="far fa-comments"></i>
+                    Comments
+                </a></li>
+                <li class="tm-nav-item"><a routerLink="" class="tm-nav-link">
+                    <i class="far fa-comments"></i>
+                    Users
+                </a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="container-fluid">
+    <main class="tm-main">
+       <h1>Add/Update Form</h1>
+       <form [formGroup]="articleForm" (ngSubmit)="onSubmit(articleForm.value)">
+           <div>
+            <input formControlName="title" type="text" class="form-control" placeholder="Title">
+            <span class="alert-danger form-control" *ngIf="validation.title.touched && validation.title.errors?.required">Required</span>
+           </div>
+           <div>
+               <select formControlName="category" class="form-control">
+                   <option value="sports">Sports</option>
+                   <option value="fashion">Fashion</option>
+                   <option value="food">Food</option>
+                   <option value="texhnology">Technology</option>
+                   <option value="fitness">Fitness</option>
+                   <option value="travel">Travel</option>
+                   <option value="music">Music</option>
+               </select>
+               <span class="alert-danger form-control" *ngIf="validation.category.touched && validation.category.errors?.required">Required</span>
+           </div>
+           <div>
+            <textarea formControlName="content" class="form-control" placeholder="Enter your content here ..."></textarea>
+            <span class="alert-danger form-control" *ngIf="validation.content.touched && validation.content.errors?.required">Required</span>
+        </div>
+           <div>
+            <input formControlName="author" type="text" class="form-control" placeholder="Author">
+            <span class="alert-danger form-control" *ngIf="validation.author.touched && validation.author.errors?.required">Required</span>  
+           </div>
+           <div class="mt-3">
+               <button type="submit" [disabled]="articleForm.invalid" class="btn">Add</button>
+               <button type="submit" [disabled]="articleForm.invalid" class="btn">Update</button>
+           </div>
+       </form>
+    </main>
+</div>
