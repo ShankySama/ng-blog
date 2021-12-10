@@ -1,6 +1,10 @@
 .addNewArticle-btn{
     margin-left: 11rem;
 }
+.update{
+    margin-right: 20px;
+}
+
 .btn{
     border-radius: 0;
     border-color: rgba(56, 204, 204, 0.75);
