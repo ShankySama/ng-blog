@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdduserComponent } from './adduser/adduser.component';
 import { ArticleAddUpdateComponent } from './article-add-update/article-add-update.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { ArticleListComponent } from './article-list/article-list.component';
@@ -8,6 +9,7 @@ import { CommentListComponent } from './comment-list/comment-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { UpdateusersComponent } from './updateusers/updateusers.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'users',component:UsersComponent},
+  {path:'adduser',component:AdduserComponent},
+  {path:'update',component:UpdateusersComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'article-list',component:ArticleListComponent},
   {path:'article-addUpdate',component:ArticleAddUpdateComponent},
