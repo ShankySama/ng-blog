@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ArticleAddUpdateComponent } from './article-add-update/article-add-update.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleComponent } from './article/article.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'users',component:UsersComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'article-list',component:ArticleListComponent},
+  {path:'article-addUpdate',component:ArticleAddUpdateComponent},
   {path:'comment-list',component:CommentListComponent},
   {path:'dashboard',component:DashboardComponent}
 ];

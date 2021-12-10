@@ -14,6 +14,7 @@ import { UpdateusersComponent } from './updateusers/updateusers.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ArticleListComponent } from './article-list/article-list.component';
+import { ArticleAddUpdateComponent } from './article-add-update/article-add-update.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ArticleListComponent } from './article-list/article-list.component';
     UpdateusersComponent,
     DashboardComponent,
     ArticleListComponent,
+    ArticleAddUpdateComponent,
     CommentListComponent,
     DashboardComponent
   ],
