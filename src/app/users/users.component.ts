@@ -1,5 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserServiceService } from '../Services/user-service.service';
 
 @Component({
@@ -10,7 +12,7 @@ import { UserServiceService } from '../Services/user-service.service';
 export class UsersComponent implements OnInit {
   data:any
 
-  constructor(private userService:UserServiceService) { }
+  constructor(private userService:UserServiceService,private router:Router,private ngbModal:NgbModal) { }
 
   getUsers(){
     this.userService.userList().subscribe((data)=>{
@@ -24,8 +26,13 @@ export class UsersComponent implements OnInit {
   deleteUser(id:any){
     this.userService.deleteUser(id).subscribe((results)=>{
       console.log(results);
+      this.getUsers()
       
     })
+  }
+
+  deleteConfirmation(content:any){
+    this.ngbModal.open(content)
   }
 
   ngOnInit(){
