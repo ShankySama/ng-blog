@@ -19,6 +19,11 @@ export class ArticleService {
     return this.http.get(`${this.baseUrl}/articles`);
   }
 
+  // get article by category
+  getArticlesByCategory(data:any){
+    return this.http.get(`${this.baseUrl}/${data}`);
+  } 
+
   // to update an article
   updateArticle(id:any,data:any){
     return this.http.patch(`${this.baseUrl}/${id}`,data);
