@@ -20,12 +20,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+              <tr *ngFor="let item of articles;let i=index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.title}}</td>
+                <td>{{item.author}}</td>
+                <td>{{item.comments}}</td>
+                <td>{{item.content}}</td>
                 <td class="text-center">
                     <button routerLink="/article-addUpdate" class="btn btn-outline-secondary">Update</button>
                     <button routerLink="/article-addUpdate" class="btn btn-outline-secondary">Delete</button>
