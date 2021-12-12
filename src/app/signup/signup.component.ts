@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
   signupform = new FormGroup({
     name : new FormControl('',[Validators.required,Validators.pattern("^[a-zA-Z\s ]+$")]),
     email: new FormControl('',[Validators.required,Validators.email]),
-    password : new FormControl('',[Validators.required,Validators.min(8)])
+    password : new FormControl('',[Validators.required,Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$')])
   })
 
   onSubmit(content:any){

@@ -28,11 +28,9 @@
         <td>{{item.name}}</td>
         <td>{{item.email}}</td>
         <td><button type="button" routerLink="/update/{{item.id}}" class="btn btn-warning">UPDATE</button></td>
-        <td><button type="button" (click)="deleteConfirmation(content)" class="btn btn-danger">DELETE</button></td>
-       
-      <!-- modal for delete -->
-
-      <td>
+        <td>
+          <button type="button" (click)="deleteConfirmation(content)" class="btn btn-danger">DELETE</button>
+           <!-- modal for delete -->
         <ng-template #content let-modal>
   
           <div class="modal-body">
@@ -48,8 +46,9 @@
           </div>
           
         </ng-template>
-
-      </td>
+        </td>
+       
+     
 
 
 
