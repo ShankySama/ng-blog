@@ -8,13 +8,13 @@
                           <div ngbDropdown class="d-inline-block">
                             <button class="btn btn-lg btn-outline-dark" id="dropdownBasic1" ngbDropdownToggle>Blogs</button>
                             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                              <button ngbDropdownItem (click)="getCategory('Sports')">Sports</button>
-                              <button ngbDropdownItem (click)="getCategory('Fashion')">Fashion</button>
-                              <button ngbDropdownItem (click)="getCategory('Technology')">Technology</button>
-                              <button ngbDropdownItem (click)="getCategory('Food')">Food</button>
-                              <button ngbDropdownItem (click)="getCategory('Fitness')">Fitness</button>
-                              <button ngbDropdownItem (click)="getCategory('Travel')">Travel</button>
-                              <button ngbDropdownItem (click)="getCategory('Music')">Music</button>
+                              <button ngbDropdownItem (click)="getCategory('sports')">Sports</button>
+                              <button ngbDropdownItem (click)="getCategory('fashion')">Fashion</button>
+                              <button ngbDropdownItem (click)="getCategory('technology')">Technology</button>
+                              <button ngbDropdownItem (click)="getCategory('food')">Food</button>
+                              <button ngbDropdownItem (click)="getCategory('fitness')">Fitness</button>
+                              <button ngbDropdownItem (click)="getCategory('travel')">Travel</button>
+                              <button ngbDropdownItem (click)="getCategory('music')">Music</button>
                             </div>
                           </div>
                         </div>
@@ -39,7 +39,7 @@
                 <tr *ngFor="let item of articles | slice: (page-1) * pageSize : page * pageSize">
                     <article class="col-12">
                         <hr class="tm-hr-primary">
-                        <a href="#" class="effect-lily tm-post-link tm-pt-20">
+                        <a routerLink="/article-detail/:articleId" class="effect-lily tm-post-link tm-pt-20">
                             <h2 class=" tm-color-primary tm-post-title">{{item.title}}</h2>
                         </a>                    
                         <p class="tm-pt-30">
@@ -56,6 +56,7 @@
                         </div>
                     </article>
                 </tr>
+                <h1 class="ml-2" *ngIf="articles.length<=0">No Data Found Try Diffrent Category</h1>
             </div>
             <div>
                 <!-- pagination -->

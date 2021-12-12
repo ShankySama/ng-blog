@@ -8,6 +8,7 @@ import { ArticleService } from '../article.service';
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
+
   // for all articles
   articles:Array<any>;
 
@@ -22,10 +23,12 @@ export class ArticleComponent implements OnInit {
   constructor(private articleService:ArticleService) { 
     this.articles = new Array<any>();
   }
+
   // formgripu for seearch
   searchForm=new FormGroup({
     search:new FormControl('',[Validators.required,Validators.pattern('^[a-zA-Z0-9\-_]{0,40}$')])
    })
+
    // on search
    onSubmit(data:any){
     this.userSearch=true;
@@ -33,13 +36,16 @@ export class ArticleComponent implements OnInit {
      // to do
      // api call and render data
    }
+
    // on selecting a category from dropdown
    getCategory(data:any){
     this.userSearch=true;
      this.searchedValue=data;
-     // to do
-     // api call
+     this.articleService.getArticlesByCategory(this.searchedValue).subscribe((result)=>{
+       this.articles=Object.values(result);
+     })
    }
+
   //  to stop user entrering infinite search
   stopUser(){
     debugger;
@@ -52,6 +58,7 @@ export class ArticleComponent implements OnInit {
     }
   }
   ngOnInit(){
+    
     // to get all articles 
     this.articleService.getListOfArticles().subscribe((result)=>{
       this.articles=Object.values(result);

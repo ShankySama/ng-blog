@@ -16,7 +16,7 @@ import { UsersComponent } from './users/users.component';
 const routes: Routes = [
   {path:'',component:ArticleComponent},
   {path:'articles',component:ArticleComponent},
-  {path:'article-detail',component:ArticleDetailComponent},
+  {path:'article-detail/:articleId',component:ArticleDetailComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'users',component:UsersComponent},
