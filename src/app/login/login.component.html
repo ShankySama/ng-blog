@@ -34,7 +34,7 @@
                 
                   </div>
     
-                  <input type="submit" [disabled]="loginform.invalid" value="Log In" class="btn text-white btn-block btn-primary">
+                  <input type="submit" [disabled]="loginform.invalid" (click)="logIn(content)" value="Log In" class="btn text-white btn-block btn-primary">
                           
                   <div class="d-flex mb-5 mt-3 align-items-center">
                   
@@ -58,3 +58,19 @@
     <script src="../../js/popper.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
     <script src="../../js/main.js"></script>
+
+    <ng-template #content let-modal>
+      <div class="modal">
+        <!-- <h4 class="modal-title">Message</h4> -->
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+       
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <p *ngIf="loggedin">Successfully logged In....&hellip;</p>
+        <p *ngIf="!loggedin">Invalid credentials !</p>
+      </div>
+      
+    </ng-template>
+    
