@@ -11,7 +11,7 @@ export class ArticleService {
   
   // to get article by id
   getArticleById(data:any){
-    return this.http.get(`${this.baseUrl}/${data}`);
+    return this.http.get(`${this.baseUrl}/arti/${data}`);
   }
 
   // to get list of all articles

@@ -8,14 +8,21 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./article-list.component.css']
 })
 export class ArticleListComponent implements OnInit {
+
   // to store list of artciles
-  articles:any;
-  constructor(private ngbModal:NgbModal,private articleService:ArticleService) { }
+  articles:Array<any>;
+
+  // for pagination
+  page=1;
+  pageSize=5;
+  constructor(private ngbModal:NgbModal,private articleService:ArticleService) { 
+    this.articles = new Array<any>();
+  }
 
   // function for calling article service to get list of articles
   getArticlesList(){
     this.articleService.getListOfArticles().subscribe((result)=>{
-      this.articles=result;
+      this.articles=Object.values(result);
     })
   }
 

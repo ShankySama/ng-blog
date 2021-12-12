@@ -62,18 +62,17 @@ export class ArticleAddUpdateComponent implements OnInit {
 
     // getting article id from params
     this.activatedRoute.params.subscribe((result)=>{
-      this.articleId=result.id;
+      this.articleId=result.id; 
     });
 
     if(this.articleId!=":id"){
-
+      
         // hiding add button and visible update button
         this.addbtn=false;
         this.updatebtn=true;
 
         // to get article data by id
         this.articleService.getArticleById(this.articleId).subscribe((result)=>{
-
           // assigning values to variables
           this.article=result;
           this.articleTitle=this.article.title;

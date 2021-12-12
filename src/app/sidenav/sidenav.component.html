@@ -8,7 +8,7 @@
             <h1 class="text-center">Blog</h1>
         </div>
         <nav class="tm-nav" id="tm-nav">            
-            <ul>
+            <ul *ngIf="showDashBoard==false">
                 <li class="tm-nav-item active"><a routerLink="/articles" class="tm-nav-link">
                     <i class="fas fa-home"></i>
                     Home
@@ -22,8 +22,12 @@
                     Sign up
                 </a></li>
             </ul>
-            <ul>
-                <li class="tm-nav-item active"><a routerLink="/article-list" class="tm-nav-link">
+            <ul *ngIf="showDashBoard==true">
+                <li class="tm-nav-item active"><a routerLink="/articles" class="tm-nav-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a></li>
+                <li class="tm-nav-item"><a routerLink="/article-list" class="tm-nav-link">
                     <i class="fas fa-home"></i>
                     Articles
                 </a></li>
@@ -35,7 +39,7 @@
                     <i class="far fa-comments"></i>
                     Users
                 </a></li>
-                <li class="tm-nav-item"><a routerLink="/" class="tm-nav-link">
+                <li (click)="logout()" class="tm-nav-item"><a routerLink="/" class="tm-nav-link">
                     <i class="far fa-comments"></i>
                     Logout
                 </a></li>

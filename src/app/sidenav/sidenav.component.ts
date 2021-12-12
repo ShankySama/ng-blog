@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
-  constructor() { }
+  // for dashboard purpose
+  showDashBoard:any;
 
-  ngOnInit(): void {
+  constructor(private router:Router) { }
+  
+  // logout
+  logout(){
+    localStorage.clear();
+    window.location.reload();
+    this.router.navigate(['/articles']);
+  }
+
+  ngOnInit(){
+    let data=localStorage.getItem('userId');
+    if(data!=null){
+      this.showDashBoard=true;
+    }
+    else{
+      this.showDashBoard=false
+    }
   }
 
 }

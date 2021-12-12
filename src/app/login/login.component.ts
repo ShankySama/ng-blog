@@ -36,12 +36,13 @@ export class LoginComponent implements OnInit {
    
   logIn(content:any){
     this.userService.logIn(this.loginform.value).subscribe((results)=>{
-      console.log(results);
+      var userData:any=results;
       this.loggedin=true;
+      localStorage.setItem('userId',userData.user.id);
       this.ngbModal.open(content, {backdropClass: 'light-blue-backdrop'},);
-     
       setTimeout( () => {
-        this.router.navigate(['/dashboard'])
+        this.router.navigate(['/dashboard']);
+        window.location.reload();
       }, 1000);
 
       

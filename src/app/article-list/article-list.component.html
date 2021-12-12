@@ -8,7 +8,7 @@
                 <button routerLink="/article-addUpdate/:id" class="btn btn-outline-secondary addNewArticle-btn">Add new article</button>
             </div>
         </div>
-        <table class="table text-center">
+        <table class="table text-center table-hover">
             <thead class="thead-dark">
               <tr class="text-center">
                 <th scope="col">No.</th>
@@ -21,13 +21,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of articles;let i=index">
-                <th scope="row">{{i+1}}</th>
-                <td>{{item.title|titlecase}}</td>
+              <tr *ngFor="let item of articles| slice: (page-1) * pageSize : page * pageSize;let i=index ">
+                <td>{{i+1}}</td>
+                <td>{{item.title|titlecase|slice:0:5}}...</td>
                 <td>{{item.author|titlecase}}</td>
                 <td>{{item.comments}}</td>
                 <td>{{item.category|titlecase}}</td>
-                <td>{{item.content}}</td>
+                <td>{{item.content|slice:0:20}}...</td>
                 <td class="text-center">
                     <button routerLink="/article-addUpdate/{{item.id}}" class="btn btn-outline-secondary">Update</button>
                     <button (click)="deleteArticle(content)" class="btn btn-outline-secondary">Delete</button>
@@ -45,5 +45,13 @@
               </tr>
             </tbody>
         </table>
+        <!-- pagination -->
+        <ngb-pagination
+        [(page)]="page"
+        [pageSize]="pageSize"
+        [collectionSize]="articles.length">
+        <ng-template ngbPaginationPrevious>Prev</ng-template>
+        <ng-template ngbPaginationNext>Next</ng-template>
+    </ngb-pagination>
     </main>
 </div>
