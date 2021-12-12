@@ -5,16 +5,17 @@
                 <h1>Articles-List</h1>
             </div>
             <div class="col">
-                <button routerLink="/article-addUpdate" class="btn btn-outline-secondary addNewArticle-btn">Add new article</button>
+                <button routerLink="/article-addUpdate/:id" class="btn btn-outline-secondary addNewArticle-btn">Add new article</button>
             </div>
         </div>
         <table class="table text-center">
             <thead class="thead-dark">
               <tr class="text-center">
-                <th scope="col">#</th>
+                <th scope="col">No.</th>
                 <th scope="col">Title</th>
                 <th scope="col">Author</th>
                 <th scope="col">Comments</th>
+                <th scope="col">Category</th>
                 <th scope="col">Content</th>
                 <th scope="col">Action</th>
               </tr>
@@ -22,13 +23,24 @@
             <tbody>
               <tr *ngFor="let item of articles;let i=index">
                 <th scope="row">{{i+1}}</th>
-                <td>{{item.title}}</td>
-                <td>{{item.author}}</td>
+                <td>{{item.title|titlecase}}</td>
+                <td>{{item.author|titlecase}}</td>
                 <td>{{item.comments}}</td>
+                <td>{{item.category|titlecase}}</td>
                 <td>{{item.content}}</td>
                 <td class="text-center">
-                    <button routerLink="/article-addUpdate" class="btn btn-outline-secondary">Update</button>
-                    <button routerLink="/article-addUpdate" class="btn btn-outline-secondary">Delete</button>
+                    <button routerLink="/article-addUpdate/{{item.id}}" class="btn btn-outline-secondary">Update</button>
+                    <button (click)="deleteArticle(content)" class="btn btn-outline-secondary">Delete</button>
+                       <!-- modal for delete -->
+                    <ng-template #content let-modal>
+                      <div class="modal-body">
+                        <h3 class="text-center">You want to Delete it? </h3>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss('cancel click')">NO</button>
+                        <button type="button" class="btn btn-ouline-dark"  (click)="modal.close('Ok click',delete(item.id))">YES</button>
+                      </div>   
+                    </ng-template>
                 </td>
               </tr>
             </tbody>

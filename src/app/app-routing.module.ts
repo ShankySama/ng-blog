@@ -24,7 +24,7 @@ const routes: Routes = [
   {path:'update/:id',component:UpdateusersComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'article-list',component:ArticleListComponent},
-  {path:'article-addUpdate',component:ArticleAddUpdateComponent},
+  {path:'article-addUpdate/:id',component:ArticleAddUpdateComponent},
   {path:'comment-list',component:CommentListComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'add-update-comments',component:AddUpdateCommentComponent}
