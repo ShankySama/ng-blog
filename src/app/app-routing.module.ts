@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'users',component:UsersComponent},
   {path:'adduser',component:AdduserComponent},
-  {path:'update',component:UpdateusersComponent},
+  {path:'update/:id',component:UpdateusersComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'article-list',component:ArticleListComponent},
   {path:'article-addUpdate',component:ArticleAddUpdateComponent},
