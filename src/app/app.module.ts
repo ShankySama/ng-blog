@@ -19,7 +19,7 @@ import { ArticleAddUpdateComponent } from './article-add-update/article-add-upda
 import { AdduserComponent } from './adduser/adduser.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { AddUpdateCommentComponent } from './add-update-comment/add-update-comment.component';
-import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
