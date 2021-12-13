@@ -26,7 +26,8 @@
                   <label>Password</label>
                   <div class="form-group last mb-4">
                     <input type="password"  class="form-control" formControlName="password" id="password">
-                    <span class="text-danger" *ngIf="loginFormValue.password.invalid && loginFormValue.password.touched"> Plese Enter Your Password</span>
+                    <span class="text-danger" *ngIf="loginFormValue.password.touched && loginFormValue.password.errors?.required"> Please Enter Password</span>
+                    <span class="text-danger" *ngIf="loginFormValue.password.touched && loginFormValue.password.errors?.pattern">password must contain minimum 8 character, at least one letter and one number</span>   
                     
                   </div>
                   

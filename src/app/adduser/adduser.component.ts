@@ -16,7 +16,7 @@ message:any
   addForm = new FormGroup({
     name : new FormControl('',[Validators.required,Validators.pattern("^[a-zA-Z\s ]+$")]),
     email: new FormControl('',[Validators.required]),
-    password: new FormControl('',[Validators.required])
+    password: new FormControl('',[Validators.required,Validators.min(8),Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$')])
  })
 
  get addFormValue(){

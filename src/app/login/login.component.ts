@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   loginform = new FormGroup({
      email: new FormControl('',[Validators.required,Validators.email]),
-     password : new FormControl('',[Validators.required])
+     password : new FormControl('',[Validators.required,Validators.min(8),Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$')])
   })
 
   onSubmit(){
