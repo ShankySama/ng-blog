@@ -19,6 +19,11 @@ export class ArticleService {
     return this.http.get(`${this.baseUrl}/articles`);
   }
 
+  // get Searched articles
+  getSearchedArticles(data:any){
+    return this.http.get(`${this.baseUrl}/articlesSearched/${data}`);
+  }
+
   // get article by category
   getArticlesByCategory(data:any){
     return this.http.get(`${this.baseUrl}/${data}`);

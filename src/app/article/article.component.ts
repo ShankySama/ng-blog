@@ -33,8 +33,9 @@ export class ArticleComponent implements OnInit {
    onSubmit(data:any){
     this.userSearch=true;
     this.searchedValue=data.search;
-     // to do
-     // api call and render data
+    this.articleService.getSearchedArticles(this.searchedValue).subscribe((result)=>{
+     this.articles=Object.values(result);
+    })
    }
 
    // on selecting a category from dropdown
@@ -48,7 +49,6 @@ export class ArticleComponent implements OnInit {
 
   //  to stop user entrering infinite search
   stopUser(){
-    debugger;
     var value=this.searchForm.controls.search.value;
     if(value.length>20){
       return false;
