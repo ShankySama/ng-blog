@@ -5,7 +5,7 @@
             <h1>Comment-List</h1>
           </div>
           <div class="col-4">
-            <button routerLink="/add-update-comments" class="btn btn-outline-secondary addNewcomment-btn">Add new comment</button>
+            <button routerLink='/add-update-comments/:id' class="btn btn-outline-secondary addNewcomment-btn">Add new comment</button>
           </div>
       </div>
   </main>
@@ -14,42 +14,32 @@
         <thead class="thead-dark">
           <tr class="text-center">
             <th scope="col">#</th>
-            <th scope="col">Date</th>
-            <th scope="col">Article Title</th>
-            <th scope="col">Commented By</th>
+            <!-- <th scope="col">Date</th> -->
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Comment</th>
             <th scope="col">Status</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>1/12/2021</td>
-            <td>Fashion-world</td>
-            <td>Amrit Kaur</td>
+          <tr *ngFor="let data of comments ;let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.message}}</td>
             <td class="text-center">
-                <button routerLink="/add-update-comments"  class="btn btn-warning update">Update</button>
-                <button   class="btn btn-danger">Delete</button>
+                <button routerLink='/add-update-comments/{{data.id}}'  class="btn btn-warning update">Update</button>
+                <button (click)="deleteComment(content)"  class="btn btn-danger">Delete</button>
             </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>4/12/2021</td>
-            <td>Organic Life</td>
-            <td>Bill Gates</td>
-            <td class="text-center">
-                <button routerLink="/add-update-comments"  class="btn btn-warning update">Update</button>
-                <button  class="btn btn-danger">Delete</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>6/12/2021</td>
-            <td>Politics Today</td>
-            <td>Narendra Modi</td>
-            <td class="text-center">
-                <button routerLink="/add-update-comments"  class="btn btn-warning update">Update</button>
-                <button   class="btn btn-danger">Delete</button>
-            </td>
+            <ng-template #content let-modal>
+              <div class="modal-body">
+                <h3 class="text-center">You want to Delete it? </h3>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss('cancel click')">NO</button>
+                <button type="button" class="btn btn-ouline-dark"  (click)="modal.close('Ok click',delete(data.id))">YES</button>
+              </div>   
+            </ng-template>
           </tr>
         </tbody>
     </table>
