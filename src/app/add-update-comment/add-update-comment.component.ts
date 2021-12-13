@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup ,FormControl,Validators} from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommentService } from '../commemt.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-add-update-comment',
   templateUrl: './add-update-comment.component.html',
@@ -17,8 +17,12 @@ export class AddUpdateCommentComponent implements OnInit {
   commentName:any;
   commentEmail:any;
   commentMessage:any;
+  commentForm:FormGroup;
+
   
-  constructor(private ngbModal:NgbModal, private activatedRoute:ActivatedRoute, private modalService: NgbModal,private commentService:CommentService) {
+  constructor(private ngbModal:NgbModal, private activatedRoute:ActivatedRoute, 
+    private router: Router,
+    private modalService: NgbModal,private commentService:CommentService) {
     this.commentForm=new FormGroup({
       name : new FormControl('',[Validators.required,Validators.pattern("^[a-zA-Z\s ]+$")]),
       email:new FormControl("", [Validators.email,Validators.required, Validators.pattern('^[a-z0-9A-Z._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
@@ -26,8 +30,7 @@ export class AddUpdateCommentComponent implements OnInit {
     })
 
 }
-  commentForm:FormGroup;
-
+  
   public hasError = (controlName: string, errorName: string) =>{
     return this.commentForm.controls[controlName].hasError(errorName);
   }
@@ -41,7 +44,8 @@ export class AddUpdateCommentComponent implements OnInit {
 
     addComment(data:any){
       this.commentService.postComment(data).subscribe((result)=>{
-        this.commentForm.reset();
+
+        this.router.navigate(['/comment-list']);
       })
     }
     addModal(data:any){
@@ -50,6 +54,7 @@ export class AddUpdateCommentComponent implements OnInit {
 
   updateComment(data:any){
     this.commentService.updateComment(this.commentId,data).subscribe((result)=>{
+      this.router.navigate(['/comment-list']);
     })
   }
 
@@ -60,7 +65,7 @@ export class AddUpdateCommentComponent implements OnInit {
           this.commentId=result.id; 
         });
     
-        if(this.commentId!=":id"){
+        if(this.commentId){
             this.add=false;
             this.update=true;
     
@@ -71,12 +76,21 @@ export class AddUpdateCommentComponent implements OnInit {
               this.commentMessage=this.comment.message;
     
               // getting default value to update
-              this.commentForm=new FormGroup({
-                name:new FormControl(this.commentName,[Validators.required]),
-                email:new FormControl(this.commentEmail,[Validators.required]),
-                message:new FormControl(this.commentMessage,[Validators.required])
-              });
+              // this.commentForm=new FormGroup({
+              //   name:new FormControl(this.commentName,[Validators.required]),
+              //   email:new FormControl(this.commentEmail,[Validators.required]),
+              //   message:new FormControl(this.commentMessage,[Validators.required])
+              // });
+
+              this.commentForm.patchValue({
+                name: this.commentName,
+                email: this.commentEmail,
+                message: this.commentMessage
+              })
             })
+        }else{
+          this.add=true;
+            this.update=false;
         }
   }
 

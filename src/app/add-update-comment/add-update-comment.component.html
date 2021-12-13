@@ -29,8 +29,8 @@
                 </div>
                 
                 <div class="text-right">
-                    <button class="tm-btn tm-btn-primary tm-btn-small add" (click)="addModal(content)" [class]="commentForm.invalid ? 'disable' : 'tm-btn-small' "[disabled]="commentForm.invalid" type="submit">Add</button>                        
-                    <button class="tm-btn tm-btn-primary tm-btn-small " (click)="addModal(content)" [class]="commentForm.invalid ? 'disable' : 'tm-btn-small' "[disabled]="commentForm.invalid" type="submit">Update</button>   
+                    <button class="tm-btn tm-btn-primary tm-btn-small add" *ngIf="add" (click)="addModal(content)" [class]="commentForm.invalid ? 'disable' : 'tm-btn-small' " [disabled]="!commentForm.valid" type="submit">Add</button>                        
+                    <button class="tm-btn tm-btn-primary tm-btn-small " *ngIf="update" (click)="addModal(content)" [class]="commentForm.invalid ? 'disable' : 'tm-btn-small' " [disabled]="commentForm.invalid" type="submit">Update</button>   
                 </div>  
                 <!-- Modal  -->
                 <ng-template #content let-modal>
@@ -40,8 +40,8 @@
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss('cancel click')">NO</button>
-                    <button *ngIf="add==true" type="button" class="btn btn-ouline-dark"  (click)="modal.close('Ok click',addComment(commentForm.value))">YES</button>
-                    <button *ngIf="update==true" type="button" class="btn btn-ouline-dark"  (click)="modal.close('Ok click',updateComment(commentForm.value))">YES</button>
+                    <button *ngIf="add" type="button" class="btn btn-ouline-dark"  (click)="modal.close('Ok click',addComment(commentForm.value))">YES</button>
+                    <button *ngIf="update" type="button" class="btn btn-ouline-dark"  (click)="modal.close('Ok click',updateComment(commentForm.value))">YES</button>
                     </div>   
                 </ng-template>                              
             </form> 

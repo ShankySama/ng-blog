@@ -13,10 +13,12 @@ export class CommentListComponent implements OnInit {
   }
 
   getComments(){
-    this.commentService.getListOfComments().subscribe((result)=>{
+    this.commentService.getListOfComments().subscribe((result:any)=>{
       console.log(result);
+      debugger;
       
-      this.comments=Object.values(result);
+      // this.comments=Object.values(result);
+      this.comments = result.filter((x:any)=> !x.isdeleted)
       console.log(this.comments);
       
     })
@@ -26,7 +28,14 @@ export class CommentListComponent implements OnInit {
   }
   
   delete(data:any){
+    debugger;
     this.commentService.deleteComment(data).subscribe((result)=>{
+      console.log(result, '===result===')
+      this.getComments();
+    },
+    (err) => {
+      console.log(err,'errr')
+      this.getComments();
     })
   }
 
