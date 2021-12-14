@@ -39,8 +39,8 @@
                 <tr *ngFor="let item of articles | slice: (page-1) * pageSize : page * pageSize">
                     <article class="col-12">
                         <hr class="tm-hr-primary">
-                        <a routerLink="/article-detail/:articleId" class="effect-lily tm-post-link tm-pt-20">
-                            <h2 class=" tm-color-primary tm-post-title">{{item.title}}</h2>
+                        <a routerLink="/article-detail/{{item.id}}"  class="effect-lily tm-post-link tm-pt-20">
+                            <h2  class=" tm-color-primary tm-post-title">{{item.title}}</h2>
                         </a>                    
                         <p class="tm-pt-30">
                             {{item.content}}
