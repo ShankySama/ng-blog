@@ -34,8 +34,9 @@ export class ArticleListComponent implements OnInit {
   // funciton to delte 
   delete(data:any){
     this.articleService.deleteArticle(data).subscribe((result)=>{
-      // to do
-      // for refreshing the arrayArticles list
+      console.log('result', result);
+      // to refresh component list
+      this.getArticlesList();
     })
   }
 
