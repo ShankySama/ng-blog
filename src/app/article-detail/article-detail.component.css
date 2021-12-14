@@ -46,6 +46,11 @@ hr {
     color:  #999;
     font-size: medium;
 }
+p {
+    color: #b3b3b3;
+    font-weight: 300;
+    margin-top: 0.8rem;
+}
 .heading{
     font-size: large;
     color: black;
